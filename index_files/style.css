@@ -1,0 +1,8 @@
+@media screen and (max-width: 800px) {
+.mobno{
+    display:none;
+    }
+    .col-xs-3 {
+      margin-left: 30%;
+    }
+    }
