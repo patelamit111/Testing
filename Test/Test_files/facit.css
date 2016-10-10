@@ -1,0 +1,40 @@
+
+@font-face {
+    font-family: 'facitlight';
+    src: url('facit-light-webfont.eot');
+    src: url('facit-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('facit-light-webfont.woff2') format('woff2'),
+         url('facit-light-webfont.woff') format('woff'),
+         url('facit-light-webfont.ttf') format('truetype'),
+         url('facit-light-webfont.svg#facitlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'facitregular';
+    src: url('facit-regular-webfont.eot');
+    src: url('facit-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('facit-regular-webfont.woff2') format('woff2'),
+         url('facit-regular-webfont.woff') format('woff'),
+         url('facit-regular-webfont.ttf') format('truetype'),
+         url('facit-regular-webfont.svg#facitregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'facitsemibold';
+    src: url('facit-semibold-webfont.eot');
+    src: url('facit-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('facit-semibold-webfont.woff2') format('woff2'),
+         url('facit-semibold-webfont.woff') format('woff'),
+         url('facit-semibold-webfont.ttf') format('truetype'),
+         url('facit-semibold-webfont.svg#facitsemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

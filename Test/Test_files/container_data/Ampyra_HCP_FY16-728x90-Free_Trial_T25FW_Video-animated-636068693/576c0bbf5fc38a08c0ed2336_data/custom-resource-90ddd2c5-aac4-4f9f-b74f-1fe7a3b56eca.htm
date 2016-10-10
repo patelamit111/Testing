@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"> <title>Widget asset</title> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <style type="text/css"> html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video{margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; -moz-osx-font-smoothing: grayscale; image-rendering: optimizeQuality;}/* HTML5 display-role reset for older browsers */ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section{display: block;}body, html{background-color: transparent; overflow: hidden;}html{height: 100%; width: 100%;}body{line-height: 1; height: 100%; width: 100%;}ol, ul{list-style: none;}blockquote, q{quotes: none;}blockquote:before, blockquote:after, q:before, q:after{content: ''; content: none;}table{border-collapse: collapse; border-spacing: 0;}</style><script type="text/javascript" src="../../../container_data_002/Ampyra_HCP_FY16-160x600-Free_Trial_T25FW_Video-animated-63606869/576c0ba25fc38a08c0ed2326_data/custom-resource-90ddd2c5-aac4-4f9f-b74f-1fe7a3b56eca_data/widget.js"></script><style>body{
+    font-family: Helvetica, Arial, sans-serif;
+    line-height: 1;
+    font-size: 12px;
+}
+ul { 
+    list-style-type: disc; 
+    list-style-position: inside; 
+}
+ol { 
+    list-style-type: decimal; 
+    list-style-position: inside; 
+}
+ol, ul{
+    padding: 0;
+}
+ul ul, ol ul, ul li, div li { 
+    list-style-type: disc; 
+    margin-left: 15px; 
+    list-style-position: outside;
+}
+ul li{
+    padding-bottom: 0px;
+}
+ol ol, ul ol { 
+    list-style-type: lower-latin; 
+    list-style-position: inside; 
+    margin-left: 15px; 
+}
+b{
+    font-weight: bold;
+}
+i{
+    font-style: italic;
+}
+li b, li i{
+    display: inline;
+}
+a{
+    cursor: pointer;
+    color: #0000EE;
+}
+a b{
+    display: inline;
+}
+span{
+    display: block;
+}
+li span, ul span, p span, a span{
+    display: inline;
+}
+sup{
+    font-size: smaller;
+    vertical-align: super;
+}
+sub{
+    font-size: smaller;
+    vertical-align: sub;
+}
+#pushdown{
+    display: block;
+    background: transparent;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+.expanded #pushdown{
+    height: 0!important;
+}
+#content{
+    position: relative;
+}
+#ISI{
+    overflow-y: scroll;
+    height: 100%;
+    position: relative;
+    padding-right: 15px!important;
+}
+/*.expanded #content, .expanded #ISI{
+    height: 100%!important;
+}*/
+#header{
+    position: relative;
+    margin-bottom: -2px;
+    min-height: 20px;
+    background: #fff;
+}
+#c-e{
+    display: inline-block;
+    text-align: right;
+    color: #fff;
+    cursor: pointer;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently not supported by any browser */
+    font-weight: bold;
+    position: absolute;
+    bottom: 4px;
+    right: 0;
+    z-index: 1;
+}
+#c-e span{
+    font-size: 11px;
+    float: left;
+}
+#arrow{
+    width: 10px;
+    float: left;
+    margin-top: 3px;
+    margin-left: 4px;
+}
+#arrow svg, #arrow svg path{
+    fill: inherit;
+}
+#plus-minus{
+    display: block;
+    float: left;
+    margin-left: 6px;
+}
+#replay-wrapper{
+    width: 100%;
+}
+#replay{
+    padding: 3px 5px;
+    clear: both;
+    display: inline-block;
+    background: #ddd;
+    cursor: pointer;
+}
+#replay span{
+    display: block;
+    float: left;
+}
+#replay #replay-icon{
+    width: 13px;
+    float: left;
+    margin-top: 1px;
+}
+#replay svg, #replay svg path{
+    fill: inherit;
+}
+#col, #exp{
+    display: none;
+}
+#c-e.collapsed #col{
+    display: block;
+}
+#c-e.expanded #exp{
+    display: block;
+}
+svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+svg, svg path{
+    fill: #fff;
+}
+
+.scrollBtn {
+    right: 1px;
+    width: 8px;
+    padding: 1px;
+    height: 8px;
+    position: absolute;
+    z-index: 9;
+    background: #aaa;
+    cursor: pointer;
+}
+
+#scrollUp{
+    top: 0;
+}
+
+#scrollDown{
+    bottom: 0px;
+}
+
+/* CUSTOM SCROLLBAR STYLES */
+
+.ps-scrollbar-y-rail{
+    opacity: 1!important;
+    top: 12px;
+    margin-top: 10px;
+    right: 1px!important;
+    width: 10px!important;
+}
+.ps-container > .ps-scrollbar-y-rail > .ps-scrollbar-y{
+    width: 10px!important;
+    cursor: pointer;
+}</style><style type="text/css" id="scrollstyle-up">.ps-scrollbar-y{ height: 8.8px!important;}.expanded .ps-scrollbar-y{ height: -20.4px!important;}.ps-scrollbar-y-rail{ height: 58px!important;}.expanded #ISI .ps-scrollbar-y-rail{ height: 58px!important;}.expanded #content{ height: 78px!important;}.expanded #ISI{ height: 70px!important;}font{display:block; line-height:11px;}</style></head><body style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif;" class=""><div id="pushdown" style="height: 0px; transition: height 0.2s ease-in-out 0s;"></div>
+<div id="header" style="display: none;">
+    <div id="header-img"></div>
+    <div id="c-e" class="collapsed" style="color: rgb(255, 255, 255);">
+        <span id="ce-text">
+            <div id="exp">Collapse</div>
+            <div id="col">Expand</div>
+        </span>
+        <!--div id="plus-minus">
+            
+        </div-->
+        <div id="arrow" style="display: none; fill: rgb(255, 255, 255);">
+            <div id="exp">
+                <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width="512px" height="316.375px" viewBox="0 0 512 316.375" enable-background="new 0 0 512 316.375" xml:space="preserve">
+                    <path d="M60.375,0L256,195.625L451.625,0L512,60.375l-256,256l-256-256L60.375,0z" fill="#000000"></path>
+                </svg>
+
+            </div>
+            <div id="col">
+                <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width="512px" height="316.375px" viewBox="0 0 512 316.375" enable-background="new 0 0 512 316.375" xml:space="preserve">
+                    <path d="M60.375,316.375L256,120.75l195.625,195.625L512,256L256,0L0,256L60.375,316.375z" fill="#000000"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="replay-wrapper" style="background: rgb(239, 238, 236) none repeat scroll 0% 0%;">
+    <div id="replay" style="background: rgb(221, 221, 221) none repeat scroll 0% 0%; color: rgb(0, 0, 0); fill: rgb(0, 0, 0); display: none;">
+        <span>Replay&nbsp;</span>
+        <div id="replay-icon">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="243.496px" height="195.094px" viewBox="0 0 243.496 195.094" enable-background="new 0 0 243.496 195.094" xml:space="preserve">
+                <path d="M229.228,47.141c-13.389-22.129-34.195-37.703-58.584-43.853C161.993,1.106,153.389,0,145.07,0
+                         c-16.738,0-32.837,4.449-47.849,13.224C70.898,28.609,54.802,52.139,49.343,83.197H0l57.884,78.305l57.939-78.397H67.412
+                         c6.676-32.646,38.378-67.34,75.705-65.865l0.117,0.005l0.117-0.003c44.33-1.184,81.757,33.664,82.991,76.695
+                         c0.647,22.561-6.447,42.006-21.084,57.795c-16.196,17.471-36.337,26.33-59.864,26.33c-4.436,0-9.071-0.313-13.775-0.93l-3.955-0.519
+                         v16.33l2.817,0.561c5.305,1.056,10.825,1.591,16.405,1.591c0.002,0,0.005,0,0.007,0c20.331-0.002,40.789-6.952,57.606-19.571
+                         c18.416-13.818,31.021-33.202,36.454-56.055C246.778,94.952,242.615,69.266,229.228,47.141z"></path>
+            </svg>
+        </div>
+    </div>
+</div>
+<div id="content" style="height: 78px;">
+    <div id="ISI" style="font-size: 11px; line-height: 11px ! important; padding: 4px; height: 70px; background: rgb(239, 238, 236) none repeat scroll 0% 0%;" class="ps-container ps-theme-default ps-active-y" data-ps-id="6c47ed70-f45b-2cea-9442-b734a01a23ef"><span style="color: rgb(102, 144, 74);"><h2><b>IMPORTANT SAFETY INFORMATION</b></h2><p>&nbsp;</p></span><ul style="color:#66904a;"><li><span style="color:black;">AMPYRA is contraindicated in patients with history of seizures, moderate or severe renal impairment (CrCl<span style="color: rgb(84, 84, 84);">&nbsp;</span>≤<span style="color: rgb(84, 84, 84);">&nbsp;</span>50<span style="color: rgb(84, 84, 84);">&nbsp;</span>mL/min), or history of hypersensitivity to AMPYRA or 4-aminopyridine.</span></li><p>&nbsp;</p><li><span style="color:black;">AMPYRA
+ can cause seizures. The risk of seizures increases with increasing 
+doses. Discontinue AMPYRA and do not restart if seizure occurs. In the 
+post-marketing period seizures have been reported. The majority of 
+seizures occurred at the recommended dose, in patients without a history
+ of seizures, and generally within days to weeks of starting therapy.</span></li><p>&nbsp;</p><li><span style="color:black;">AMPYRA
+ has not been evaluated in patients with history of seizures or with 
+epileptiform activity on an EEG, as these patients were excluded from 
+clinical trials. The risk of seizures in patients with epileptiform 
+activity on an EEG is unknown, and could be substantially higher than 
+that observed in clinical studies.</span></li><p>&nbsp;</p><li><span style="color:black;">AMPYRA
+ should not be taken with other forms of 4-aminopyridine (4-AP, 
+fampridine), since the active ingredient is the same. Patients should 
+discontinue use of any product containing 4-aminopyridine prior to 
+initiating AMPYRA to reduce the potential for dose-related adverse 
+reactions.</span></li><p>&nbsp;</p><li><span style="color:black;">AMPYRA
+ can cause anaphylaxis and severe allergic reaction. Signs and symptoms 
+included respiratory compromise, urticaria, and angioedema of the throat
+ or tongue. If an anaphylactic or other serious allergic reaction 
+occurs, discontinue AMPYRA and do not restart.</span></li><p>&nbsp;</p><li><span style="color:black;">AMPYRA is cleared predominantly by the kidneys. The risk of seizures in patients with mild renal impairment (CrCl<span style="color: rgb(84, 84, 84);">&nbsp;</span>51–80<span style="color: rgb(84, 84, 84);">&nbsp;</span>mL/min) is unknown, but AMPYRA plasma levels in these patients may approach those seen at a dose of 15<span style="color: rgb(84, 84, 84);">&nbsp;</span>mg
+ twice daily, a dose that may be associated with an increased risk of 
+seizures; estimated CrCl should be known before initiating AMPYRA and 
+monitored at least annually during treatment.</span></li><p>&nbsp;</p><li><span style="color:black;">Urinary
+ tract infections (UTIs) were reported more frequently in controlled 
+studies in patients receiving AMPYRA (12%) as compared to placebo (8%). 
+UTIs in AMPYRA-treated patients should be evaluated and treated as 
+clinically indicated.</span></li><p>&nbsp;</p><li><span style="color:black;">The most common adverse events (incidence<span style="color: rgb(84, 84, 84);">&nbsp;</span>≥<span style="color: rgb(84, 84, 84);">&nbsp;</span>2%
+ and at a rate greater than the placebo rate) for AMPYRA in MS patients 
+were urinary tract infection, insomnia, dizziness, headache, nausea, 
+asthenia, back pain, balance disorder, multiple sclerosis relapse, 
+paresthesia, nasopharyngitis, constipation, dyspepsia, and 
+pharyngolaryngeal pain.</span></li><p>&nbsp;</p><li><span style="color:black;">The
+ risk of adverse events, including seizures, increases with increasing 
+AMPYRA doses. No additional benefit was demonstrated at doses greater 
+than 10<span style="color: rgb(84, 84, 84);">&nbsp;</span>mg twice daily.</span></li><p>&nbsp;</p><li><span style="color:black;">There
+ are no adequate and well-controlled studies of AMPYRA in pregnant 
+women. AMPYRA should be used during pregnancy only if the potential 
+benefit justifies the potential risk to the fetus.</span></li><p>&nbsp;</p><li><span style="color:black;">It
+ is not known if AMPYRA passes into breast milk. Discontinue AMPYRA or 
+nursing, taking into consideration the importance of AMPYRA to the 
+mother.</span></li><p>&nbsp;</p><li><span style="color:black;">Safety and effectiveness of AMPYRA in patients younger than 18 years have not been established.</span></li><p>&nbsp;</p><li><span style="color:black;">Clinical
+ studies of AMPYRA did not include sufficient numbers of subjects aged 
+65 and over to determine whether they respond differently from younger 
+subjects. Because elderly patients are more likely to have decreased 
+renal function, it is important to know the estimated CrCl before 
+initiating AMPYRA.</span></li></ul><p>&nbsp;</p><span style="color: rgb(102, 144, 74);"><b>INDICATION</b></span><p>&nbsp;</p>AMPYRA
+ is indicated as a treatment to improve walking in patients with 
+multiple sclerosis (MS). This was demonstrated by an increase in walking
+ speed.<p>&nbsp;</p><p>References:</p><p>1. AMPYRA (dalfampridine) Extended Release Tablets Full Prescribing Information. Acorda Therapeutics, Inc.</p><p>2. Goodman AD, Brown TR, Edwards KR, et al. A phase 3 trial of extended release oral dalfampridine in multiple sclerosis. <i>Ann Neurol.</i> 2010;68:494-502.</p><p>3.
+ Goodman AD, Brown TR, Krupp LB, et al; on behalf of the Fampridine 
+MS-F203 Investigators. Sustained-release oral fampridine in multiple 
+sclerosis: a randomised, double-blind, controlled trial. <i>Lancet. </i>2009; 373:732-738.</p><p>&nbsp;</p>AMPYRA®,
+ ACORDA THERAPEUTICS® and the stylized ACORDA THERAPEUTICS® logo are 
+registered trademarks of Acorda Therapeutics, Inc. | AMPYRA® is marketed
+ by Acorda Therapeutics, Inc. and manufactured under license from 
+Alkermes Pharma Ireland Limited (APIL), Ireland. | The stylized path 
+logo is a trademark of Acorda Therapeutics, Inc. | © 2016 Acorda 
+Therapeutics, Inc. All rights reserved.<p>&nbsp;</p><p align="right">09/16 AMP4125</p><div class="ps-scrollbar-x-rail" style="left: 0px; bottom: -121px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 124px; height: 68px; right: 1px; background: transparent none repeat scroll 0% 0%; border-radius: 4px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 3px; height: 20px; background: rgb(255, 114, 47) none repeat scroll 0% 0%; border-radius: 4px;"></div></div></div>
+    <div id="scrollUp" class="scrollBtn" style="display: block; background: rgb(170, 170, 170) none repeat scroll 0% 0%;">
+        <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width="512px" height="316.375px" viewBox="0 0 512 316.375" enable-background="new 0 0 512 316.375" xml:space="preserve">
+            <path d="M60.375,316.375L256,120.75l195.625,195.625L512,256L256,0L0,256L60.375,316.375z" fill="#000000"></path>
+        </svg>
+    </div>
+    <div id="scrollDown" class="scrollBtn" style="display: block; background: rgb(170, 170, 170) none repeat scroll 0% 0%;">
+        <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width="512px" height="316.375px" viewBox="0 0 512 316.375" enable-background="new 0 0 512 316.375" xml:space="preserve">
+            <path d="M60.375,0L256,195.625L451.625,0L512,60.375l-256,256l-256-256L60.375,0z" fill="#000000"></path>
+        </svg>
+    </div>
+</div>
+<script src="../../../container_data_002/Ampyra_HCP_FY16-160x600-Free_Trial_T25FW_Video-animated-63606869/576c0ba25fc38a08c0ed2326_data/custom-resource-90ddd2c5-aac4-4f9f-b74f-1fe7a3b56eca_data/perfect-scrollbar.js" type="text/javascript"></script>
+<link href="../../../container_data_002/Ampyra_HCP_FY16-160x600-Free_Trial_T25FW_Video-animated-63606869/576c0ba25fc38a08c0ed2326_data/custom-resource-90ddd2c5-aac4-4f9f-b74f-1fe7a3b56eca_data/perfect-scrollbar.css" rel="stylesheet" type="text/css"><script>var isi = document.getElementById('ISI'),
+    content = document.getElementById('content');
+var pushdown = document.getElementById('pushdown');
+var scrollUp = false, scrollDown = true, autoScroll, isScrolling = false;
+var delay, speed, scrollAmount;
+
+var defaultHeight;
+
+var el,
+    upBtn = document.querySelector('#scrollUp'),
+    downBtn = document.querySelector('#scrollDown'),
+    ce = document.getElementById('c-e'),
+    header = document.getElementById('header-img'),
+    headerHeight = document.getElementById('header').clientHeight,
+    replay = document.getElementById('replay'),
+    body = document.body;
+
+// JQUERY Selection approach
+var $ = function(elem){
+    try{
+        
+        var target = null;
+
+        if(document.querySelectorAll(elem).length > 1){
+            target = document.querySelectorAll(elem);
+        }
+        else{
+            target = document.querySelector(elem);
+        }
+
+        this.css = function(prop, val, important){
+            if(important == undefined)
+                important = '';
+            if(target){
+                if(val === undefined)
+                    return target.style.getPropertyValue(prop);
+                if(target.length > 1)
+                    for(var i=0; i<target.length;i++)target[i].style.setProperty(prop, val, important);
+                else
+                    target.style.setProperty(prop, val);
+            }
+            return this;
+        }
+        
+        this.bfClick = function(callback){
+            
+            if(target){
+                if(target.length == 1 || target.length == undefined){
+                    target.addEventListener('click', function(){
+                        if(document.referrer.indexOf('app.bannerflow.com') == -1)BannerFlow.open(this.getAttribute('data-link'));
+                        else window.open(this.getAttribute('data-link'))
+                    })
+                }
+                else{
+                    for(i=0; i<target.length;i++){
+                        target[i].addEventListener('click', function(){
+                            if(document.referrer.indexOf('app.bannerflow.com') == -1)BannerFlow.open(this.getAttribute('data-link'));
+                            else window.open(this.getAttribute('data-link'))
+                        })
+                    }
+                }
+            }
+            return this;
+        }
+        
+    }catch(e){console.log("jqlight:\n", e)}
+    
+    return this;
+};
+
+isi.addEventListener('mouseover', function(){
+    clearInterval(autoScroll);
+})
+
+BannerFlow.addEventListener(BannerFlow.START_ANIMATION, function(){
+    body.className = '';
+    ce.className = 'collapsed';
+    $('#ce-text #exp').innerHTML = BannerFlow.settings.expandTxt.split('/')[0]
+    initScroll();
+})
+
+var scrollCount = 0; // To avoid multiple instances
+function initScroll(){
+    if(!BannerFlow.editorMode && !BannerFlow.imageGeneratorMode){
+        if(scrollCount == 0){
+            setTimeout(function(){
+                autoScroll = setInterval(function(){
+                    if(isi.scrollTop >= isi.scrollHeight - isi.offsetHeight){
+                        scrollUp = true;
+                        scrollDown = false;
+                    }
+                    if(isi.scrollTop <= 0){
+                        scrollDown = true;
+                        scrollUp = false;
+                    }
+                    if(scrollDown)isi.scrollTop += scrollAmount;
+                    //if(scrollUp)isi.scrollTop--;
+                }, speed);
+            }, delay);
+        }
+        scrollCount++;
+    }
+}
+
+var canPause = true;
+BannerFlow.addEventListener(BannerFlow.STOP, function(){
+    canPause = false;
+})
+
+BannerFlow.addEventListener(BannerFlow.INIT, function () {
+    
+    var expandDirection = BannerFlow.settings.expandDirection || 'up';
+    expandDirection = expandDirection.toLowerCase();
+    
+    isi.innerHTML = isi.innerHTML.replace('-code-', BannerFlow.settings.isiCode);
+    
+    // Init custom scrollbar
+    el = document.querySelector('#ISI');
+    var msl = BannerFlow.getHeight()/10;
+    if(BannerFlow.bannerWidth == 300 && BannerFlow.bannerHeight == 250){
+        msl = BannerFlow.getHeight();
+    }
+    if(BannerFlow.bannerWidth == 728 && BannerFlow.bannerHeight == 90){
+        msl = BannerFlow.getHeight()/2;
+    }
+    Ps.initialize(el, {
+        wheelSpeed: 0.6,
+        minScrollbarLength: 20,
+        maxScrollbarLength: msl,
+        suppressScrollX: true
+    });
+    
+    $('.ps-scrollbar-y').css('background', BannerFlow.settings.scrollThumbColor)
+    $('.ps-scrollbar-y-rail').css('background', BannerFlow.settings.scrollRailColor)
+    
+    $('.ps-scrollbar-y').css('border-radius', BannerFlow.settings.roundedCorners+'px', 'important')
+    $('.ps-scrollbar-y-rail').css('border-radius', BannerFlow.settings.roundedCorners+'px', 'important')
+    
+    $('.scrollBtn').css('background', BannerFlow.settings.scrollBtnColor)
+    
+
+    if(!BannerFlow.settings.scrollButtons)
+        $('.ps-scrollbar-y-rail').css('margin-top', '0px');
+
+
+    var railH = $('.ps-scrollbar-y-rail').css('height').replace('px', '');
+    if(!header.innerHTML && !BannerFlow.settings.expandable) headerHeight = 0;
+    var expandedH = (BannerFlow.getHeight()-headerHeight-replay.clientHeight)
+    var replayHeight = BannerFlow.imageGeneratorMode ? replay.clientHeight/2 : replay.clientHeight;
+    var h = $('.ps-scrollbar-y').innerHeight/10;
+    var eH = 2;
+    if($('.ps-scrollbar-y').innerHeight == 600){
+        h = $('.ps-scrollbar-y').innerHeight/30;
+        eH = 3;
+    }
+    if($('.ps-scrollbar-y').innerHeight == 250){
+        h -= 5;
+    }
+    
+    if(expandDirection == 'left' && h > 20){
+        h -= 10;
+    }
+    var railWithButtons = '';
+    if(BannerFlow.settings.scrollButtons){
+        h -= 10;
+        railH -= 10;
+        expandedH -= 20;
+        railWithButtons = '.ps-scrollbar-y-rail{ height: ' + railH + 'px!important;}';
+        if(BannerFlow.settings.header.replace(/\d|px|:\s/g, '') == 'pt'){
+            railWithButtons = '.ps-scrollbar-y-rail{ height: ' + railH + 'px!important;}';
+            document.getElementById('scrollUp').style.marginTop = parseInt(BannerFlow.settings.header.replace(/\D/g, ''))+8+'px';
+        }
+    }
+    else{
+        //h -= 5;
+        railH -= 0;
+        cH = '';
+        railWithButtons = '.ps-scrollbar-y-rail{ height: ' + (railH+10) + 'px!important;}';
+    }
+    
+    
+    
+    if(BannerFlow.settings.header.replace(/\d|px|:\s/g, '') == 'pt'){
+        railWithButtons = '.ps-scrollbar-y-rail{ height: ' + (railH-parseInt(BannerFlow.settings.header.replace(/\D/g, ''))-8) + 'px!important;margin-top:'+(parseInt(BannerFlow.settings.header.replace(/\D/g, ''))+18)+'px!important;}';
+        expandedH -= 18;
+        headerHeight = 0;
+    }
+    
+    if(!BannerFlow.settings.expandable){
+        railH = expandedH;
+        railWithButtons = '.ps-scrollbar-y-rail{ height: ' + railH + 'px!important;}';
+    }
+    
+    var cH = h;
+    if(cH < 0)cH = cH*-1;
+
+    if(BannerFlow.bannerWidth == 300 && BannerFlow.bannerHeight == 250){
+        cH = cH*4;
+        h -= 8;
+    }
+    
+    if(BannerFlow.bannerWidth == 728 && BannerFlow.bannerHeight == 90){
+        cH = cH*4;
+        h -= 8;
+    }
+    
+    if(expandDirection == 'up'){
+        var css = '.ps-scrollbar-y{ height: ' + cH + 'px!important;}.expanded .ps-scrollbar-y{ height: ' + (h*eH) + 'px!important;}'+railWithButtons+'.expanded #ISI .ps-scrollbar-y-rail{ height: ' + expandedH + 'px!important;}.expanded #content{ height: '+(BannerFlow.getHeight()-headerHeight-replayHeight)+'px!important;}.expanded #ISI{ height: '+(BannerFlow.getHeight()-headerHeight-replayHeight-(BannerFlow.settings.textPadding*2))+'px!important;}font{display:block; line-height:'+BannerFlow.settings.lineHeight+'px;}';
+        setTimeout(function(){
+            pushdown.style.WebkitTransition = 'height .2s ease-in-out';
+            pushdown.style.msTransition = 'height .2s ease-in-out';
+            pushdown.style.transition = 'height .2s ease-in-out';
+        },300)
+    }
+    if(expandDirection == 'left'){
+        var tempHeader = document.getElementById('header');
+        tempHeader.parentNode.removeChild(document.getElementById('header'));
+        content.insertBefore(tempHeader, isi);
+        var css = '.ps-scrollbar-y{ height: ' + cH + 'px!important;}'+railWithButtons+'#content{ height: '+(BannerFlow.getHeight()-headerHeight-replayHeight)+'px!important; width:'+(BannerFlow.getWidth()-BannerFlow.settings.pushdownHeight)+'px!important;float:right!important; }#ISI .ps-scrollbar-y-rail{ height: ' + expandedH + 'px!important;}#ISI{width: '+(BannerFlow.getWidth()-BannerFlow.settings.pushdownHeight-BannerFlow.settings.textPadding*2-7)+'px}.expanded #content{ width: '+(BannerFlow.getWidth())+'px!important;} .expanded #ISI{ width: '+(BannerFlow.getWidth()-(BannerFlow.settings.textPadding*2)-7)+'px!important;}font{display:block; line-height:'+BannerFlow.settings.lineHeight+'px;} #arrow{transform: rotateZ(-90deg);}#pushdown{height:100%!important;width:100%;position:absolute;z-index:0;}';
+        tempHeader.style.width = BannerFlow.getWidth()-BannerFlow.settings.pushdownHeight-BannerFlow.settings.textPadding*2-7
+        setTimeout(function(){
+            content.style.WebkitTransition = 'width .2s ease-in-out';
+            content.style.msTransition = 'width .2s ease-in-out';
+            content.style.transition = 'width .2s ease-in-out';
+            ISI.style.WebkitTransition = 'width .2s ease-in-out';
+            ISI.style.msTransition = 'width .2s ease-in-out';
+            ISI.style.transition = 'width .2s ease-in-out';
+        },300)
+    }
+    var head = document.head || document.getElementsByTagName('head')[0],
+        style = document.createElement('style');
+    style.type = 'text/css';
+    if (style.styleSheet){
+        style.styleSheet.cssText = css;
+    } else {
+        style.appendChild(document.createTextNode(css));
+    }
+    style.id = 'scrollstyle-'+expandDirection;
+    head.appendChild(style);
+    el.scrollTop = 0;
+    Ps.update(el);
+    $('a').bfClick();
+    
+    var skipFrames = parseInt(BannerFlow.settings.skipFrames);
+    var frameIndex = parseInt(BannerFlow.getStyle('frame-index'))-parseInt(skipFrames);
+    if(BannerFlow.imageGeneratorMode){
+        if(frameIndex <= 0)
+            el.scrollTop = 0;
+        else
+            el.scrollTop = Math.floor((BannerFlow.getHeight()-pushdown.clientHeight)/BannerFlow.settings.lineHeight)*BannerFlow.settings.lineHeight*frameIndex-(BannerFlow.settings.lineHeight*(frameIndex+2))-BannerFlow.settings.textPadding/2;
+    }
+});
+
+BannerFlow.addEventListener(BannerFlow.TEXT_CHANGED, function(){
+    isi.innerHTML = formatText(BannerFlow.text);
+    if(BannerFlow.editorMode){
+        initScroll();
+    }
+})
+
+upBtn.addEventListener('click', function(){
+    el.scrollTop -= 20;
+})
+
+downBtn.addEventListener('click', function(){
+    el.scrollTop += 20;
+})
+
+replay.addEventListener('click', function(){
+    BannerFlow.prevLoop();
+})
+
+ce.addEventListener('click', function(){
+    if(ce.className != 'expanded'){
+        var tempScrollHeight = el.scrollHeight;
+        ce.className = 'expanded';
+        body.className = 'expanded';
+        BannerFlow.raiseEvent('toggleExpand');
+        if(canPause)BannerFlow.pause();
+        
+        if(BannerFlow.getWidth() >= 700){
+            setTimeout(function(){
+                el.scrollTop = 0;
+            },200);
+        }
+        $('#ce-text #col').innerHTML = BannerFlow.settings.expandTxt.split('/')[1];
+    }
+    else{
+        BannerFlow.raiseEvent('toggleCollapse');
+        ce.className = 'collapsed';
+        if(body.className.indexOf('toggleEvent') != -1) BannerFlow.play();
+        if(canPause)BannerFlow.play();
+        body.className = '';
+        if(BannerFlow.getWidth() >= 700){
+            setTimeout(function(){
+                el.scrollTop = 0;
+            },200);
+        }
+        $('#ce-text #exp').innerHTML = BannerFlow.settings.expandTxt.split('/')[0];
+    }
+    el.scrollTop = el.scrollTop-1;
+    Ps.update(el);
+})
+
+pushdown.addEventListener('click', function(){
+    if(document.referrer.indexOf('app.bannerflow.com') == -1)BannerFlow.open();
+    else window.open(BannerFlow.defaultTargetUrl)
+})
+
+BannerFlow.addEventListener('toggleExpand', function(){
+    if(ce.className != 'expanded'){
+        ce.className = 'expanded';
+        body.className = 'expanded toggleEvent';
+        $('#ce-text #col').innerHTML = BannerFlow.settings.expandTxt.split('/')[1]
+    }
+    el.scrollTop = el.scrollTop-1;
+    Ps.update(el);
+})
+
+BannerFlow.addEventListener('toggleCollapse', function(){
+    if(ce.className == 'expanded'){
+        if(body.className.indexOf('toggleEvent') != -1) BannerFlow.play();
+        ce.className = 'collapsed';
+        body.className = '';
+        $('#ce-text #col').innerHTML = BannerFlow.settings.expandTxt.split('/')[0]
+    }
+    el.scrollTop = el.scrollTop-1;
+    Ps.update(el);
+})
+
+BannerFlow.addEventListener(BannerFlow.SETTINGS_CHANGED, function(){
+    if(BannerFlow.settings){
+        
+        var expandDirection = BannerFlow.settings.expandDirection || 'up';
+        expandDirection = expandDirection.toLowerCase();
+        var pushAmount = BannerFlow.settings.pushdownHeight;
+        
+        if(BannerFlow.settings.header.indexOf('//') != -1)
+            header.innerHTML = '<img src="'+BannerFlow.settings.header.replace('bannerflow.blob.core.windows.net/resources', 'resources.host.bannerflow.com')+'"/>';
+        else
+            header.parentNode.style.background = BannerFlow.settings.header;
+        
+        isi.style.fontSize = BannerFlow.settings.textSize+"px";
+        isi.style.setProperty('line-height', BannerFlow.settings.lineHeight+"px", 'important');
+        isi.style.color = BannerFlow.settings.textColor+"px";
+        isi.style.padding = BannerFlow.settings.textPadding+"px";
+        
+        if(expandDirection == 'left'){
+            pushAmount = 0;
+        }
+
+        if(!header.innerHTML && !BannerFlow.settings.expandable){
+            content.style.height = BannerFlow.getHeight()-pushAmount+'px';
+            isi.style.height = BannerFlow.getHeight()-pushAmount-BannerFlow.settings.textPadding*2+'px';
+        }
+        else isi.style.height = BannerFlow.getHeight()-BannerFlow.settings.textPadding*2-pushAmount-headerHeight+'px';
+        if(!header && !BannerFlow.settings.expandable){
+            headerHeight = 0;
+            content.style.height = BannerFlow.getHeight()-pushAmount-headerHeight+'px';
+        }
+        
+        if(BannerFlow.settings.header.replace(/\d|px|:\s/g, '') == 'pt'){
+            header.parentNode.style.minHeight = '0px';
+            header.parentNode.style.height = '0px';
+            header.parentNode.style.overflow = 'visible';
+            ce.style.bottom = '-'+(4+parseInt(BannerFlow.settings.header.replace(/\D/g, '')))+'px';
+            ce.style.right = '-1px';
+            content.style.height = BannerFlow.getHeight()-pushAmount+'px';
+            isi.style.height = BannerFlow.getHeight()-pushAmount-BannerFlow.settings.textPadding*2+'px';
+        }
+      
+        isi.style.background = BannerFlow.settings.contentBackground || '#EFEEEC';
+        replay.parentNode.style.background = BannerFlow.settings.contentBackground || '#EFEEEC';
+        if(expandDirection == 'up')
+            pushdown.style.height = pushAmount+'px';
+        
+        if(expandDirection == 'left'){
+            isi.style.width = BannerFlow.getWidth()-BannerFlow.settings.pushdownHeight+'px';
+            isi.style.float = 'right';
+        }
+        
+        replay.style.background = BannerFlow.settings.replayBackground || '#dddddd';
+        replay.style.color = BannerFlow.settings.replayColor || '#000000';
+        replay.style.fill = BannerFlow.settings.replayColor || '#000000';
+        
+        document.querySelector('#ce-text #exp').innerHTML = BannerFlow.settings.expandTxt.split('/')[1] || 'Collapse'
+        document.querySelector('#ce-text #col').innerHTML = BannerFlow.settings.expandTxt.split('/')[0] || 'Expand'
+        
+        if(BannerFlow.settings.expandable)
+            header.parentNode.style.display = 'block';
+        else
+            header.parentNode.style.display = 'none';
+        
+        if(BannerFlow.settings.expandArrows){
+            document.getElementById('arrow').style.display = 'block';
+            //document.getElementById('plus-minus').style.display = 'none';
+        }
+        else{
+            document.getElementById('arrow').style.display = 'none';
+            //document.getElementById('plus-minus').style.display = 'block';
+        }
+        
+        if(BannerFlow.settings.replay)
+            replay.style.display = 'inline-block';
+        else
+            replay.style.display = 'none';
+        
+        ce.style.color = BannerFlow.settings.expandableColor;
+        document.getElementById('arrow').style.fill = BannerFlow.settings.expandableColor;
+        
+        if($('a')) $('a').css('color', BannerFlow.settings.linkColor);
+        
+        delay = BannerFlow.settings.scrollDelay*1000;
+        speed = 20+BannerFlow.settings.scrollSpeed;
+        scrollAmount = BannerFlow.settings.scrollAmount;
+        var buttonState = 'block';
+        if(!BannerFlow.settings.scrollButtons)
+            buttonState = 'none';
+        else
+            buttonState = 'block';
+        document.getElementById('scrollUp').style.display = buttonState;
+        document.getElementById('scrollDown').style.display = buttonState;
+    }
+    if(BannerFlow.editorMode){
+        $('.scrollBtn').css('background', BannerFlow.settings.scrollBtnColor)
+        initScroll();
+    }
+})
+
+BannerFlow.addEventListener(BannerFlow.STYLE_CHANGED, function(){
+    document.body.style.fontFamily = BannerFlow.getStyle('fontFamily');
+    if(BannerFlow.editorMode){
+        initScroll();
+    }
+})
+
+function formatText(text){
+    text =
+        text.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&').
+    replace(/<div>/g,'').replace(/<\/div>/g,'').replace(/<br>/g,'<p>&nbsp;</p>').replace(/#br#/g,'<br>').
+    replace(/href/g,'data-link').
+    replace(/bannerflow\.blob\.core\.windows\.net\/resources/g, 'resources.host.bannerflow.com');
+    return text;
+}</script></body></html>
